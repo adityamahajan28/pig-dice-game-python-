@@ -31,7 +31,8 @@ player_score = [0 for _ in range(player)]
 while max(player_score) < max_score:
 
     for player_idx in range(player):
-        print("\nPlayer number",player_idx + 1, "turn has just started!\n")
+        print("\nPlayer number",player_idx + 1, "turn has just started!")
+        print("Your total score is:",player_score[player_idx], "\n")
         current_score = 0
     
         while True:
@@ -53,5 +54,6 @@ while max(player_score) < max_score:
         player_score[player_idx] = player_score[player_idx] + current_score 
         print("Total score is: ",player_score[player_idx])
 
-winner = player_score.index(max(player_score)) + 1
-print(f"\nPlayer {winner} wins with a score of {max(player_score)}!")
+max_score = max(player_score)
+winner_idx = player_score.index(max_score)
+print("Player number", winner_idx + 1, "is the winner with a score of: ", max_score)
